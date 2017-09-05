@@ -3,7 +3,10 @@
 tags： 目录
 
 ---
+## 简介
+这篇博客是我平时刷Leetcode，剑指offer题目和牛客网上的招聘题目等的代码、思路。代码和思路都保存在[我的github](https://github.com/Richard-coder/Programming-Practice/tree/master)上,我对于每一道题都尽量做到c++和python都进行实现。在解题的过程中会参考一些资料，难以面面俱到的写出参考信息，如若侵权，请联系删除。
 
+代码思路的github连接：https://github.com/Richard-coder/Programming-Practice/tree/master
 ## Leetcode
 | 题号 | 题目&&题解 | c++ | python | 难度|
 | ---- | ---- | ---- | ---- | ---- |
@@ -25,3 +28,10 @@ tags： 目录
 | 考察点 | 题目&&题解 | c++ | python |
 | ---- | ---- | ---- | ---- |
 | 数组 | [二维数组中的查找](./剑指offer/二维数组中的查找/readme.md) | [c++](./剑指offer/二维数组中的查找/src/cpp/二维数组中的查找.cpp) | [python](./剑指offer/二维数组中的查找/src/python/二维数组中的查找.py) |
+
+## 参考
+
+ 1. [LeetCode Solutions by kamyu104](https://github.com/kamyu104/LeetCode#array)
+ 2. [LeetCode题解](https://github.com/soulmachine/leetcode) 
+ 3. [剑指Offer——名企面试官精讲典型编程题](https://github.com/gatieme/CodingInterviews)
+ 4. [牛客网](https://www.nowcoder.com/9087476)
