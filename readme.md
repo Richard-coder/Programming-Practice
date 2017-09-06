@@ -28,6 +28,7 @@ tags： 目录
 | 考察点 | 题目&&题解 | c++ | python |
 | ---- | ---- | ---- | ---- |
 | 数组 | [二维数组中的查找](./剑指offer/二维数组中的查找/readme.md) | [c++](./剑指offer/二维数组中的查找/src/cpp/二维数组中的查找.cpp) | [python](./剑指offer/二维数组中的查找/src/python/二维数组中的查找.py) |
+| 字符串 | [替换空格](./剑指offer/替换空格/readme.md) | [c++](./剑指offer/替换空格/src/cpp/替换空格.cpp) | [python](./剑指offer/替换空格/src/python/替换空格.py) |
 
 ## 参考
 
@@ -35,3 +36,4 @@ tags： 目录
  2. [LeetCode题解](https://github.com/soulmachine/leetcode) 
  3. [剑指Offer——名企面试官精讲典型编程题](https://github.com/gatieme/CodingInterviews)
  4. [牛客网](https://www.nowcoder.com/9087476)
+ 5. [AlgorithmsByPython](https://github.com/Jack-Lee-Hiter/AlgorithmsByPython)
