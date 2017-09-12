@@ -29,6 +29,7 @@ tags： 目录
 | ---- | ---- | ---- | ---- |
 | 数组 | [二维数组中的查找](./剑指offer/二维数组中的查找/readme.md) | [c++](./剑指offer/二维数组中的查找/src/cpp/二维数组中的查找.cpp) | [python](./剑指offer/二维数组中的查找/src/python/二维数组中的查找.py) |
 | 字符串 | [替换空格](./剑指offer/替换空格/readme.md) | [c++](./剑指offer/替换空格/src/cpp/替换空格.cpp) | [python](./剑指offer/替换空格/src/python/替换空格.py) |
+| 链表 | [从尾到头打印链表](./剑指offer/从尾到头打印链表/readme.md) | [c++](./剑指offer/从尾到头打印链表/src/cpp/从尾到头打印链表.cpp) | [python](./剑指offer/从尾到头打印链表/src/python/从尾到头打印链表.py) |
 
 ## 参考
 
