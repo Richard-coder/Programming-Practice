@@ -1,27 +1,30 @@
 # -*- coding:utf-8 -*-
-# class ListNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.next = None
-
 class Solution:
-    # 返回从尾部到头部的列表值序列，例如[1,2,3]
-    def printListFromTailToHead2(self, listNode):
+    def minNumberInRotateArray(self, rotateArray):
         # write code here
-        if not listNode:
-            return []
-        res=[]
-        head=listNode
-        while head:
-            res.insert(0,head.val)
-            head=head.next
-        return res
-    def printListFromTailToHead(self, listNode,res=None):
-        if res==None:
-            res=[]
-        if not listNode:
-            return []
-        else:
-            self.printListFromTailToHead(listNode.next,res)
-            res.append(listNode.val)
-        return res
+        if len(rotateArray) == 0:
+            return 0
+        front = 0
+        rear = len(rotateArray) - 1
+        mid = front
+        while rotateArray[front] >= rotateArray[rear]:
+            if rear - front == 1:
+                mid = rear
+                break
+            mid = (front + rear) // 2
+            if rotateArray[front] == rotateArray[mid] and rotateArray[mid] == rotateArray[rear]:
+                return self.minInOrder(rotateArray, front, rear)
+
+            if rotateArray[mid] >= rotateArray[front]:
+                front = mid
+            elif rotateArray[mid] <= rotateArray[rear]:
+                rear = mid
+
+        return rotateArray[mid]
+
+    def minInOrder(self, rotateArray, front, rear):
+        minNum = rotateArray[front]
+        for temp in rotateArray[front:rear + 1]:
+            if minNum >= temp:
+                minNum = temp
+        return minNum
