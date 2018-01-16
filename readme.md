@@ -32,7 +32,8 @@ tags： 目录
 | 链表 | [从尾到头打印链表](./剑指offer/从尾到头打印链表/readme.md) | [c++](./剑指offer/从尾到头打印链表/src/cpp/从尾到头打印链表.cpp) | [python](./剑指offer/从尾到头打印链表/src/python/从尾到头打印链表.py) |
 | 二叉树 | [重建二叉树](./剑指offer/重建二叉树/readme.md) | [c++](./剑指offer/重建二叉树/src/cpp/重建二叉树.cpp) | [python](./剑指offer/重建二叉树/src/python/重建二叉树.py) 
 | 栈 队列 | [用两个栈实现队列](./剑指offer/用两个栈实现队列/readme.md) | [c++](./剑指offer/用两个栈实现队列/src/cpp/用两个栈实现队列.cpp) | [python](./剑指offer/用两个栈实现队列/src/python/用两个栈实现队列.py) 
-
+| 二分查找 | [旋转数组的最小数字](./剑指offer/旋转数组的最小数字/readme.md) | [c++](./剑指offer/旋转数组的最小数字/src/cpp/旋转数组的最小数字.cpp) | [python](./剑指offer/旋转数组的最小数字/src/python/旋转数组的最小数字.py) 
+| 递归 | [斐波那契数列](./剑指offer/斐波那契数列/readme.md) | [c++](./剑指offer/斐波那契数列/src/cpp/斐波那契数列.cpp) | [python](./剑指offer/斐波那契数列/src/python/斐波那契数列.py) 
 ## 经典算法&&数据结构
 | 考察点 | 题目&&题解 | c++ | python |
 | ---- | ---- | ---- | ---- |
