@@ -1,4 +1,4 @@
-#递归 斐波那契数列
+#递归 二进制中1的个数
 
 tags： 递归
 
@@ -30,42 +30,6 @@ long long Fibonacci(unsigned int n){
 
 换种思路，先根据f(0)和f(1)计算出f(2),再依次计算出f(3)，f(4)，...，f(n),这种计算方法的空间复杂度是常数，时间复杂度是$\Theta(n)$
 
-### 代码
-#### [c++代码](./src/cpp/斐波那契数列.cpp)
-
-```c++
-class Solution {
-public:
-    int Fibonacci(int n) {
-        int result[2]={0,1};
-        if (n<2)
-            return result[n];
-        long long int f_zero=0, f_one=1,f_res=0;
-        int count=1;
-        while(count<n){
-            f_res=f_zero+f_one;
-            f_zero=f_one;
-            f_one=f_res;
-            count++;
-        }
-        return f_res;
-    }
-};
-```
-
-#### [python代码](./src/python/斐波那契数列.py)
-
-```python
-
-# -*- coding:utf-8 -*-
-class Solution:
-    def Fibonacci(self, n):
-        tempArray = [0, 1]
-        if n >= 2:
-            for i in range(2, n+1):
-                tempArray[i%2] = tempArray[0] + tempArray[1]
-        return tempArray[n%2]
-```
 
 ### 时间复杂度为$\Theta(logn)$但不是很实用的解法
 介绍解法之前先介绍下面的数学公式：
@@ -78,15 +42,6 @@ $$a^n=\begin{cases} a^{n/2}.a^{n/2} &\text{n为偶数} \\ a^{(n-1)/2}.a^{(n-1)/2
 
 但这种方法隐含的时间常数比较大（不是很懂）,很少会有软件采用这种算法，另外这种算法实现复杂，有多个递归基，不适合面试。
 
-
-实现上面的方法时，需要定义一个2×2的矩阵，并且定义好矩阵的乘法以及乘方运算，比较麻烦，可以将递归公式转换一下形式：
-
-
-原理：观察：f(n)=f(n-1)+f(n-2)=2f(n-2)+f(n-3)=3f(n-3)+2f(n-4)=5f(n-4)+3f(n-5)=...=f(k).f(n-k+1)+f(k-1).f(n-k)
-
-若令n=2k,则有f(2k)=f(k).f(k+1)+f(k-1).f(k)=f(k).(f(k)+f(k-1))+f(k-1).f(k)=f(k)^2+2.f(k).f(k-1)
-
-若令n=2*k-1,则有f(2k-1)
 ### 拓展 青蛙跳台阶
 题目描述： 一个台阶总共有n级，如果一次可以跳1级，也可以跳2级。求总共有多少总跳法，并分析算法的时间复杂度。
 
@@ -121,5 +76,43 @@ $$f(n)=\begin{cases} 1 &\text{n=0}\\1 & \text{n=1}\\
 
 记2x8的覆盖方法记为f(8)，用第一个1x2的小矩形取覆大矩形的的最左边时有两个选择，竖着放或者横着放，竖着放的时候，覆盖方法为f(7)，横着放的时候，比如在左上角，则左下角也只能在横着放一个小矩形，因此，横着放的时候覆盖方法为f(6)，因此f(8)=f(7)+f(6)，可以看出这仍然是斐波那契数列。
 
+
+
+## 代码
+### [c++代码](./src/cpp/二进制中1的个数.cpp)
+
+```c++
+class Solution {
+public:
+    int Fibonacci(int n) {
+        int result[2]={0,1};
+        if (n<2)
+            return result[n];
+        long long int f_zero=0, f_one=1,f_res=0;
+        int count=1;
+        while(count<n){
+            f_res=f_zero+f_one;
+            f_zero=f_one;
+            f_one=f_res;
+            count++;
+        }
+        return f_res;
+    }
+};
+```
+
+### [python代码](./src/python/二进制中1的个数.py)
+
+```python
+
+# -*- coding:utf-8 -*-
+class Solution:
+    def Fibonacci(self, n):
+        tempArray = [0, 1]
+        if n >= 2:
+            for i in range(2, n+1):
+                tempArray[i%2] = tempArray[0] + tempArray[1]
+        return tempArray[n%2]
+```
 
 [1]:./img/斐波那契数列拓展2.png
