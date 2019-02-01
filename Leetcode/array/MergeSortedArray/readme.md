@@ -5,6 +5,9 @@ tags： Array
 ---
 
 ## 题目原文
+
+[原文地址](https://leetcode.com/problems/merge-sorted-array/description/)
+
 Given two sorted integer arrays nums1 and nums2, merge nums2 into nums1 as one sorted array.
 
 Note:
@@ -13,15 +16,29 @@ You may assume that nums1 has enough space (size that is greater or equal to 
 ## 题目大意
 nums1和nums2是两个排序好的数组，把两个数组合并放入nums1并排好序。
 
-
 ## 解题思路
+
 A和B都已经是排好序的数组， 我们只需要从后往前比较就可以了。
 
 因为A有足够的空间容纳A + B， 我们使用游标i指向m + n - 1， 也就是最大数值存放的地方， 从后往前遍历A， B， 谁大就放到i这里， 同时递减i。
 
+## 注意事项
 
+要注意num1或num2在移动过程中, 变为空数组后的情况
+
+注意判断的逻辑顺序, 先判断两个数组是否为空,在不为空的条件下,再进行比较大小, 这样逻辑容易一些
+
+单元测试, 特殊情况: 
+
+```
+[1]
+1
+[]
+0
+```
 
 ## 代码
+
 ### [c++代码](./src/cpp/MergeSortedArray.cpp)
 ```c++
 class Solution {

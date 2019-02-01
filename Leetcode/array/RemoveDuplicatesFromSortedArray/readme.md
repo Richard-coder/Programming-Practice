@@ -5,6 +5,8 @@ tags： Array，Two Pointers
 ---
 
 ## 题目原文
+[原文网址](https://leetcode.com/problems/remove-duplicates-from-sorted-array/description/)
+
 Given a sorted array, remove the duplicates in place such that each element appear only once and return the new length.
 	
 Do not allocate extra space for another array, you must do this in place with constant memory.
@@ -19,9 +21,30 @@ Your function should return length = 2, with the first two elements of nums bein
 要求不可新声明数组
 
 ## 解题思路
+
 遍历数组，有连个索引值，index索引不重复的元素，i索引所有元素，将i索引元素与index元素比较，不同则放入index索引元素后，index元素按索引值排列放在数组前面
 
+## 注意事项
+
+判断输入数组是否为空
+
+## C++ 知识点
+
+vector是否为空判断:
+
+```c++
+vector<int> &nums
+nums.empty()// true为空
+```
+
+vector的大小/数组长度
+
+```c++
+nums.size()
+```
+
 ## 代码
+
 ### [c++代码](./src/cpp/RemoveDuplicatesFromSortedArray.cpp)
 
 ```c++

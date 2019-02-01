@@ -5,6 +5,8 @@ tags： Array，Two Pointers
 ---
 
 ## 题目原文
+[原文网址](https://leetcode.com/problems/remove-duplicates-from-sorted-array-ii/description/)
+
 Follow up for "Remove Duplicates":
 
 What if duplicates are allowed at most twice?
@@ -22,13 +24,37 @@ Your function should return length = 5, with the first five elements of nums 
 ## 解题思路
 加一个变量统计重复次数
 
+## 注意事项
+
+判断输入数组的长度是否为空
+
+本文c++版本的代码写的比较通用, 不仅可以处理重复两次的情况, 重复任意次都可以
+
+## python代码知识点
+
+```python
+if not nums:
+    return 0
+```
+
+```python
+last,i,same=0,1,False
+```
+
+```python
+if nums[i]!=nums[last] or not same:
+                same=nums[last]==nums[i]
+```
+
 ## 代码
+
 ### [c++代码](./src/cpp/RemoveDuplicatesFromSortedArrayII.cpp)
+
 ```c++
 class Solution {
 public:
     int removeDuplicates(vector<int>& nums) {
-        if (nums.size()<2)
+        if (nums.size()==0)
             return nums.size();
         int i=0,last=2;
         for (int index=1,temp=0;index<nums.size();index++){

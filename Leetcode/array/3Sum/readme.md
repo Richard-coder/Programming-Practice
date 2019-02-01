@@ -5,6 +5,8 @@ tags： Array, Two Pointers
 ---
 
 ## 题目原文
+[原文地址](https://leetcode.com/problems/3sum/description/)
+
 Given an array S of n integers, are there elements a, b, c in S such that a + b + c = 0? Find all unique triplets in the array which gives the sum of zero.
 
 Note: The solution set must not contain duplicate triplets.
@@ -29,6 +31,7 @@ A solution set is:
 
 ## 解题思路
 ### 网上分析1
+
 题目分析：
 
 1. 每一个答案数组triplet中的元素是要求升序排列的。
@@ -47,63 +50,70 @@ A solution set is:
 
 归根结底， 其实这是two pointers的想法， 定位其中两个指针， 根据和的大小来移动另外一个。 解题中要
 注意的就是一些细节问题。 好了， 上代码吧。
- 
+
 ### 网上分析2
-the key idea is the same as the TwoSum problem. When we fix the 1st number,the 2nd and 3rd number can be found following the same reasoning as TwoSum.
 
-The only difference is that, the TwoSum problem of LEETCODE has a unique solution.However, in ThreeSum, we have multiple duplicate solutions that can be found. Most ofthe OLE errors happened here because you could've ended up with a solution with so manyduplicates.
+这个题目核心思想与 TwoSum, 当第一个数字固定后, 第二个数字和第三个数字就可以采用和TwoSum问题差不多的方法. 不同的是 TwoSum 问题只有一个确定的解, 这个问题却可能有多个解
 
-The naive solution for the duplicates will be using the STL methods like below :
+这个问题还有一点是要解决数组中可能有重复的元素造成重复解的问题, 直觉上的想法是用STL: 
 
+```c++
 std::sort(res.begin(), res.end());
-
 res.erase(unique(res.begin(), res.end()), res.end());
+```
 
-But according to my submissions, this way will cause you double your time consumingalmostly.
-A better approach is that, to jump over the number which has been scanned, no matter itis part of some solution or not.
-
-If the three numbers formed a solution, we can safely ignore all the duplicates of them.
-We can do this to all the three numbers such that we can remove the duplicates.
-Here's my AC C++ Code:
+但根据提交的结果分析, 采用上面的方法耗时较长. 比较好的方法是在遍历数据的时候, 就剔除重复数据, 无论这个数据是否是可行解的一部分.
 
 ### 我的分析：
 
 主要是先将原数组排序，并充分利用排序好的数组的特性。去除重复答案的方法是，先按index从小到大确定第一个元素，在按（bengin=index）++和（end）--的顺序确定第二个元素和第三个元素，当begin=begin+1是跳过，end同理，第一个元素的所有可能循环完成后，index++之前也要判断index是否等于index+1。总而言之就是利用排序号数组特性保证每个元素都各不相同。先确定答案中最小的数，防止答案中出现重复的组合
 
+具体思路:
 
+1. 先用`std::sort`将原数组按升序排列
+2. 基本思路是定位第一个元素, 然后用两个指针分别指向数组剩余部分的头部和尾部, 根据两个指针指向数字的和移动指针.
 
+## 加速的小技巧
+
+    if(target < 0)
+    {
+    	break;
+    }
+    # 这个实用性不是很强
+    if(num[back] < 0)
+    {
+        break;
+    }
 ## 代码
+
 ### [c++代码](./src/cpp/3Sum.cpp)
 ```c++
 class Solution {
 public:
     vector<vector<int>> threeSum(vector<int>& nums) {
         std::sort(nums.begin(),nums.end());
-        vector<vector<int >> res;
-        for(int i=0;i<nums.size();i++){
+        vector<vector<int>> res;
+        
+        for (int i=0; i<nums.size(); i++){
             int target=-nums[i];
-            int front=i+1;
-            int back=nums.size()-1;
-            while(front<back){
+            
+            if (target<0)//加速,全是正数的数组不可能和为0
+                break;
+            int front=i+1, back=nums.size()-1;
+            while (front<back){
                 int sum=nums[front]+nums[back];
-                if(sum>target)
+                if (sum>target)
                     back--;
                 else if(sum<target)
                     front++;
                 else{
-                    vector<int> tri(3,0);
-                    tri[0]=nums[i];
-                    tri[1]=nums[front];
-                    tri[2]=nums[back];
+                    vector<int> tri={nums[i], nums[front], nums[back]};
                     res.push_back(tri);
-                    
-                    while(front<back&&nums[front]==tri[1]) front++;
-                    while(front<back&&nums[back]==tri[2])  back--;
-                    
-
+                    while(front<back&&nums[front]==tri[1]) front++;//防止中间数字有重复
+                    while(front<back&&nums[back]==tri[2]) back--;//防止最后的数字有重复
                 }
-                while(i+1<nums.size()&&nums[i+1]==nums[i]) i++;
             }
+            while(i<nums.size()-1&&nums[i]==nums[i+1]) i++;//防止第一个数字重复
         }
         return res;
     }
@@ -111,6 +121,7 @@ public:
 ```
 
 ### [python代码](./src/python/3Sum.py)
+
 ```python
 cimport collections
 

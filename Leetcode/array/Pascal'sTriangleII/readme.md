@@ -5,6 +5,8 @@ tags： Array
 ---
 
 ## 题目原文
+[原文网址](https://leetcode.com/problems/pascals-triangle-ii/description/)
+
 Given an index k, return the kth row of the Pascal's triangle.
 For example, given k = 3,
 Return [1,3,3,1].
@@ -13,10 +15,11 @@ Note:
 
 Could you optimize your algorithm to use only O(k) extra space?
 ## 题目大意
+
 给出帕斯卡三角形第k层，注意这里的K从0开始计数
 
-
 ## 解题思路
+
 要求空间复杂度为O(K)，因此不能使用二维数据，应用一维数组滚动计算。
 
 采用从后往前计算的策略
@@ -29,9 +32,19 @@ Could you optimize your algorithm to use only O(k) extra space?
 
 那么我们计算A[4][3]的时候就会出现问题了， 因为这时候A[3][2]不是3， 而是4了。
 
-为了解决这个问题， 我们只能从后往前计算， 仍然是上面那个例子， 我们实现计算A[4][3] = A[3][2] + A[3]
-[3]， 也就是6， 我们将6直接覆盖到3这个位置， 但不会影响我们计算A[4][2]， 因为A[4][2] = A[3][1] + A[3]
-[2]， 已经不会涉及到3这个位置了。 
+为了解决这个问题， 我们只能从后往前计算， 仍然是上面那个例子， 我们实现计算A[4][3] = A[3][2] + A[3][3]， 也就是6， 我们将6直接覆盖到3这个位置， 但不会影响我们计算A[4][2]， 因为A[4][2] = A[3][1] + A[3][2]， 已经不会涉及到3这个位置了。 
+
+## python 知识点
+
+```python
+old, result[j] = result[j], old + result[j]# 这里等号右边是原来的值, 等号右边是计算后的值
+```
+
+python  列表生成式, 是Python内置的非常简单却强大的可以用来创建list的生成式, 常常用来代替循环
+
+```python
+result = [1] + [result[j - 1] + result[j] for j in xrange(1, i)] + [1]
+```
 
 
 
@@ -57,12 +70,13 @@ public:
 ```python
 class Solution:
         # @return a list of integers
+# 这份代码采用的是从前向后的顺序计算, 为了解决从前向后计算当前位置数据被覆盖的问题, 使用old变量保存更新前的当前位置的值, 用于下次计算.
         def getRow(self, rowIndex):
                 result = [0] * (rowIndex + 1)
                 for i in xrange(rowIndex + 1):
                         old = result[0] = 1
                         for j in xrange(1, i + 1):
-                                old, result[j] = result[j], old + result[j]
+                                old, result[j] = result[j], old + result[j]# 这里等号右边是原来的值, 等号右边是计算后的值
                 return result
 
 
@@ -73,7 +87,7 @@ class Solution2:
         def getRow(self, rowIndex):
                 result = [1]
                 for i in range(1, rowIndex + 1):
-                        result = [1] + [result[j - 1] + result[j] for j in xrange(1, i)] + [1]
+                        result = [1] + [result[j - 1] + result[j] for j in xrange(1, i)] + [1]# 这里等式右边依旧是原始的值, 右面是计算后的值, 计算过程中,result改变的值不会在等号左面产生影响
                 return result
 
 

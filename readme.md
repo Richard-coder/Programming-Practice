@@ -25,18 +25,19 @@ tags： 目录
 | 网易 | [合唱团](./牛客网2017笔试题合集/合唱团/readme.md) | [c++](./牛客网2017笔试题合集/合唱团/src/cpp/合唱团.cpp) | [python](./牛客网2017笔试题合集/合唱团/src/python/合唱团.py) |
 
 ## 剑指offer
+
 | 考察点 | 题目&&题解 | c++ | python |
 | ---- | ---- | ---- | ---- |
 | 数组 | [二维数组中的查找](./剑指offer/二维数组中的查找/readme.md) | [c++](./剑指offer/二维数组中的查找/src/cpp/二维数组中的查找.cpp) | [python](./剑指offer/二维数组中的查找/src/python/二维数组中的查找.py) |
 | 字符串 | [替换空格](./剑指offer/替换空格/readme.md) | [c++](./剑指offer/替换空格/src/cpp/替换空格.cpp) | [python](./剑指offer/替换空格/src/python/替换空格.py) |
 | 链表 | [从尾到头打印链表](./剑指offer/从尾到头打印链表/readme.md) | [c++](./剑指offer/从尾到头打印链表/src/cpp/从尾到头打印链表.cpp) | [python](./剑指offer/从尾到头打印链表/src/python/从尾到头打印链表.py) |
-| 二叉树 | [重建二叉树](./剑指offer/重建二叉树/readme.md) | [c++](./剑指offer/重建二叉树/src/cpp/重建二叉树.cpp) | [python](./剑指offer/重建二叉树/src/python/重建二叉树.py) 
-| 栈 队列 | [用两个栈实现队列](./剑指offer/用两个栈实现队列/readme.md) | [c++](./剑指offer/用两个栈实现队列/src/cpp/用两个栈实现队列.cpp) | [python](./剑指offer/用两个栈实现队列/src/python/用两个栈实现队列.py) 
+| 二叉树 | [重建二叉树](./剑指offer/重建二叉树/readme.md) | [c++](./剑指offer/重建二叉树/src/cpp/重建二叉树.cpp) | [python](./剑指offer/重建二叉树/src/python/重建二叉树.py) |
+| 栈 队列 | [用两个栈实现队列](./剑指offer/用两个栈实现队列/readme.md) | [c++](./剑指offer/用两个栈实现队列/src/cpp/用两个栈实现队列.cpp) | [python](./剑指offer/用两个栈实现队列/src/python/用两个栈实现队列.py) |
 
 ## 经典算法&&数据结构
 | 考察点 | 题目&&题解 | c++ | python |
 | ---- | ---- | ---- | ---- |
-| 排序 | [快速排序](./经典算法&&数据结构/快速排序/readme.md) | [c++](./经典算法&&数据结构/快速排序/src/cpp/快速排序.cpp) | [python](./经典算法&&数据结构/快速排序/src/python/快速排序.py) 
+| 排序 | [快速排序](./经典算法&&数据结构/快速排序/readme.md) | [c++](./经典算法&&数据结构/快速排序/src/cpp/快速排序.cpp) | [python](./经典算法&&数据结构/快速排序/src/python/快速排序.py) |
 
 
 
