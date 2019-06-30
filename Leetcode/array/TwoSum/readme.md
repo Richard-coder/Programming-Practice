@@ -6,25 +6,29 @@ tags： Array, Hash Table
 
 ## 题目原文
 
-[原文网址](https://leetcode.com/problems/two-sum/description/)
+[题目链接](<https://leetcode-cn.com/problems/two-sum/>)
 
-Given an array of integers, return indices of the two numbers such that they add up to a specific target.
-You may assume that each input would have exactly one solution.
+给定一个整数数组 nums 和一个目标值 target，请你在该数组中找出和为目标值的那 两个 整数，并返回他们的数组下标。
 
-Example:
+你可以假设每种输入只会对应一个答案。但是，你不能重复利用这个数组中同样的元素。
 
-Given nums = [2, 7, 11, 15], target = 9,
-Because nums[0] + nums[1] = 2 + 7 = 9,
-return [0, 1].
+**示例:**
 
-UPDATE (2016/2/13):
+```
+给定 nums = [2, 7, 11, 15], target = 9
 
-The return format had been changed to zero-based indices. Please read the above updated description carefully.
+因为 nums[0] + nums[1] = 2 + 7 = 9
+所以返回 [0, 1]
+```
+
 ## 题目大意
+
 n这道题目的意思是给定一个数组和一个值， 让求出这个数组中两个值的和等于这个给定值的坐
 标。 输出是有要求的， 1， 坐标较小的放在前面， 较大的放在后面。 2， 这俩坐标从0开始计数。
 
 
+
+需要注意的是, 整数数组中的元素是没有排序好的.
 
 ## 解题思路
 第一步： 我们要分析题意， 其中有三个关键点：

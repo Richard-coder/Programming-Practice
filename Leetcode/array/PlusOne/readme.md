@@ -5,13 +5,30 @@ tags： Array，Math
 ---
 
 ## 题目原文
-[原文网址](https://leetcode.com/problems/plus-one/description/)
+[题目链接](https://leetcode-cn.com/problems/plus-one/)
 
-Given a non-negative integer represented as a non-empty array of digits, plus one to the integer.
 
-You may assume the integer do not contain any leading zero, except the number 0 itself.
+给定一个由整数组成的非空数组所表示的非负整数，在该数的基础上加一。
 
-The digits are stored such that the most significant digit is at the head of the list.
+最高位数字存放在数组的首位， 数组中每个元素只存储一个数字。
+
+你可以假设除了整数 0 之外，这个整数不会以零开头。
+
+**示例 1:**
+
+```
+输入: [1,2,3]
+输出: [1,2,4]
+解释: 输入数组表示数字 123。
+```
+
+**示例 2:**
+
+```
+输入: [4,3,2,1]
+输出: [4,3,2,2]
+解释: 输入数组表示数字 4321。
+```
 
 ## 题目大意
 用vector保存一个数字，个位数在索引最大的位置，计算这个数字加1后的结果。

@@ -5,21 +5,26 @@ tags： Array
 ---
 
 ## 题目原文
-[原文网址](https://leetcode.com/problems/pascals-triangle/description/
+[题目链接](https://leetcode-cn.com/problems/pascals-triangle/)
 
-Given numRows, generate the first numRows of Pascal's triangle.
-For example, given numRows = 5,
-Return
-
-    [
-         [1],
-        [1,1],
-       [1,2,1],
-      [1,3,3,1],
-     [1,4,6,4,1]
-    ]
-
+给定一个非负整数 numRows，生成杨辉三角的前 numRows 行。
 ![img](https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif)
+
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+**示例:**
+
+```
+输入: 5
+输出:
+[
+     [1],
+    [1,1],
+   [1,2,1],
+  [1,3,3,1],
+ [1,4,6,4,1]
+]
+```
 
 ## 题目大意
 
@@ -37,13 +42,13 @@ Return
 
 ## c++ 知识点
 
-### vector resize和reverse区别
+### vector resize和reserve区别
 
 ```
 void reserve (size_type n);
 ```
 
-reserver函数用来给vector**预分配**存储区大小，即capacity的值 ，但是没有给这段内存进行初始化。reserve 的参数n是推荐预分配内存的大小，实际分配的可能等于或大于这个值，即n大于capacity的值，就会reallocate内存 capacity的值会大于或者等于n 。这样，当ector调用push_back函数使得size 超过原来的默认分配的capacity值时 避免了内存重分配开销。
+reserve函数用来给vector**预分配**存储区大小，即capacity的值 ，但是没有给这段内存进行初始化。reserve 的参数n是推荐预分配内存的大小，实际分配的可能等于或大于这个值，即n大于capacity的值，就会reallocate内存 capacity的值会大于或者等于n 。这样，当vector调用push_back函数使得size 超过原来的默认分配的capacity值时 避免了内存重分配开销。
 
 需要注意的是：reserve 函数分配出来的内存空间，只是表示vector可以利用这部分内存，但vector不能有效地访问这些内存空间，访问的时候就会出现越界现象，导致程序崩溃。
 
@@ -59,6 +64,12 @@ resize函数**重新分配**大小，改变容器的大小，并且创建对象
 当n大于当前size()值时候，vector会插入相应数量的元素 使得size()值达到n，并对这些元素进行初始化，如果调用上面的第二个resize函数，指定val，vector会用val来初始化这些新插入的元素
 
 当n大于capacity()值的时候，会自动分配重新分配内存存储空间。
+
+容器调用resize()函数后，所有的空间都已经初始化了，所以可以直接访问。
+
+而reserve()函数预分配出的空间没有被初始化，所以不可访问。
+
+
 
 参考: [C++：vector中的resize()函数 VS reserve()函数](https://www.cnblogs.com/biyeymyhjob/archive/2013/05/11/3072893.html), [vector resize和reverse区别](https://blog.csdn.net/yockie/article/details/7992057)
 

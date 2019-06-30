@@ -5,15 +5,26 @@ tags： Array
 ---
 
 ## 题目原文
-[原文网址](https://leetcode.com/problems/pascals-triangle-ii/description/)
+[题目链接](https://leetcode-cn.com/problems/pascals-triangle-ii/)
 
-Given an index k, return the kth row of the Pascal's triangle.
-For example, given k = 3,
-Return [1,3,3,1].
+给定一个非负索引 k，其中 k ≤ 33，返回杨辉三角的第 k 行。
 
-Note:
+![img](img/readme.assets/PascalTriangleAnimated2.gif)
 
-Could you optimize your algorithm to use only O(k) extra space?
+在杨辉三角中，每个数是它左上方和右上方的数的和。
+
+**示例:**
+
+```
+输入: 3
+输出: [1,3,3,1]
+```
+
+进阶：
+
+你可以优化你的算法到 O(k) 空间复杂度吗？
+
+
 ## 题目大意
 
 给出帕斯卡三角形第k层，注意这里的K从0开始计数

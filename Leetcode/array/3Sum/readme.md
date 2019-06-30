@@ -84,6 +84,45 @@ res.erase(unique(res.begin(), res.end()), res.end());
     {
         break;
     }
+## 容易错的地方
+
+### 1.
+
+```
+while(front<back&&nums[front]==tri[1]) front++;//防止中间数字有重复
+while(front<back&&nums[back]==tri[2]) back--;//防止最后的数字有重复
+```
+
+上面的代码不可以写成下面的样子
+
+```
+while(front<back&&nums[front]==nums[front+1]){front++;}
+while(front<back&&nums[back]==nums[back-1]){back--;}
+```
+
+原因是`while(front<back&&nums[front]==nums[front+1]){front++;}`执行完后front指向的是中间数字的左后一个重复元素, 那么想用第二种写法, 怎么才是对的呢, 如下
+
+```
+while(front<back&&nums[front]==nums[front+1]){front++;}
+front++;
+while(front<back&&nums[back]==nums[back-1]){back--;}
+back--;
+```
+
+### 2. 
+
+```
+while(i<nums.size()-1&&nums[i]==nums[i+1]) i++;//防止第一个数字重复
+```
+
+上面的代码不可以写成下面的样子
+
+```
+while(i<nums.size()-1&&nums[i]==nums[i+1]){i++;}
+```
+
+
+
 ## 代码
 
 ### [c++代码](./src/cpp/3Sum.cpp)
